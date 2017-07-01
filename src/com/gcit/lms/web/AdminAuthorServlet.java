@@ -90,8 +90,8 @@ public class AdminAuthorServlet extends HttpServlet {
 			
 			
 		case "/searchAuthors":
-			System.out.println("pageNo = "+ request.getParameter("pageNo"));
-			System.out.println("pages = "+ request.getParameter("pages"));
+			//System.out.println("pageNo = "+ request.getParameter("pageNo"));
+			//System.out.println("pages = "+ request.getParameter("pages"));
 			if (request.getParameter("pageNo") != null
 					&& !request.getParameter("pageNo").isEmpty()) {
 				Integer pageNo = Integer.parseInt(request
