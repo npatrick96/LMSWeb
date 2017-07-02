@@ -41,30 +41,9 @@ public class AdminBookLoanServlet extends HttpServlet {
 		String reqUrl = request.getRequestURI().substring(
 				request.getContextPath().length(),
 				request.getRequestURI().length());
-		BookLoan bookLoan = new BookLoan();
 		String message = "";
 		Boolean isAjax = Boolean.FALSE;
 		switch (reqUrl) {
-		
-//		case "/deleteBookLoan":
-//			if (request.getParameter("dateOut") != null
-//					&& !request.getParameter("dateOut").isEmpty()) {
-//				bookLoan.setDateOut(request
-//						.getParameter("dateOut"));
-//
-//				try {
-//					adminService.deleteBookLoan(bookLoan);
-//					message = "BookLoan deleted Successfully";
-//				} catch (SQLException e) {
-//					e.printStackTrace();
-//					message = "Author delete failed. Try Again!";
-//				}
-//			}
-//			break;
-	
-		
-			
-			
 		case "/pageBookLoans":
 			if (request.getParameter("pageNo") != null
 					&& !request.getParameter("pageNo").isEmpty()) {
@@ -136,10 +115,10 @@ public class AdminBookLoanServlet extends HttpServlet {
 				Integer bookId  =  Integer.parseInt(request.getParameter("bookId"));
 				Integer branchId  =  Integer.parseInt(request.getParameter("branchId"));
 				
-				System.out.println(bookId + " "+ branchId + " "+ cardNo + " "+ dateOut);
+				//System.out.println(bookId + " "+ branchId + " "+ cardNo + " "+ dateOut);
 				
 				bookLoan = adminService.getBookLoanBy4Pks(bookId,  branchId,  cardNo,  dateOut);
-				System.out.println(bookLoan.getBook().getTitle());
+				//System.out.println(bookLoan.getBook().getTitle());
 				if (request.getParameter("newDueDate") != null){
 					String newDueDate = request.getParameter("newDueDate");
 					System.out.println(newDueDate + " 00:00:00");
